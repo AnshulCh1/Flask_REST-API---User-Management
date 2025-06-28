@@ -42,7 +42,7 @@ class Users(Resource):
     
 class User(Resource):
     @marshal_with(userFields)  
-    def get(sekf, id):
+    def get(self, id):
         user = UserModel.query.filter_by(id=id).first()
         if not user:
             abort(404, "User not Found")
